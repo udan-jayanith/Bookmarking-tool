@@ -1,0 +1,139 @@
+
+:root {
+    accent-color: #2f941bf4;
+}
+  
+*{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+body{
+    min-width: 400px;
+    min-height: 450px;
+    background-color: white;
+}
+
+input{
+    height: 20px;
+    width: 90%;
+    padding: 10px;
+    box-shadow: none;
+    margin-bottom: 10px;
+    border: 5px solid #2f941bf4;
+}
+
+button{
+    border-top: none;
+    background-color: #2f941bf4;
+    color: aliceblue;
+    height: 40px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: none;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+ul li, a{
+    font-size: 15px;
+    text-decoration: none;
+    color: #2f941bf4;
+    cursor: pointer;
+}
+
+.deleteButton{
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    padding: 0 0 0 1px;
+    text-align: center;
+    margin-left: 8px;
+}
+
+li{
+    display: flex;
+    align-items: center;
+    .p{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 290px;
+        margin: 0%;
+        padding: 0;
+    }
+    .dot{
+        border-radius: 2000px;
+        width: 8px;
+        height: 8px;
+        padding: 0;
+        margin: 0 5px 0 0;
+    }
+}
+
+
+.clearAll{
+    bottom: 0;
+    margin-bottom: 10px;
+    border: 5px solid #2f941bf4;
+    background-color: white;
+    color: #2f941bf4;
+}
+
+.addToBookMark:hover, .Bookmark:hover, .deleteButton:hover{
+    background-color: #087400da;
+}
+
+input, input[type=text]{
+    border: 5px solid #2f941bf4;
+    outline: none;
+}
+
+.clearAll{
+    border: 5px solid #2f941bf4;
+    background-color: white;
+}
+
+button{
+    cursor: pointer;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.listItemDelete{
+    display: flex;
+    align-items: center;
+}
+
+dialog{
+    min-width: 320px;
+    min-height: 125px;
+    max-width: 340px;
+    max-height: 125px;
+
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    border: 5px solid #2f941bf4;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.499);
+
+    button{
+        width: 96px;
+        height: 40px;
+    }
+
+    .popup-no{
+        border: 5px solid #2f941bf4;
+        background-color: white;
+        color: #2f941bf4;
+    }
+
+}
+
+dialog::backdrop{
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.365);
+    backdrop-filter: blur(3px);
+}
