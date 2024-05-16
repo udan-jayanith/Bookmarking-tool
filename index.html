@@ -15,6 +15,7 @@
 
     <button class="addToBookMark">Add To Bookmark</button>
     <button class="Bookmark">Bookmark This Tab</button>
+    <a href="#" class="editButton">Edit</a>
 
     <ul class="ul">     
     </ul>               
@@ -32,7 +33,24 @@
         <button class="popup-no">No</button>
     </dialog>
 
-    <script src="script.js"></script>
-    <script src="eventListner.js"></script>
+    <dialog class="edit">
+        <p class="menu"><a class="save-edit">save and exit</a> || <a class="exit-edit">exit</a></p>
+        
+        <ol class="ol">
+        </ol>
+
+        <dialog class="edit-dialog">
+            <input type="text" class="url-edit" placeholder="Url">
+            <input type="text" class="title-edit" placeholder="Title">
+        
+            <button class="done-edit">Done</button>
+            <button class="cancel-edit">Calcel</button>
+        </dialog>
+
+    </dialog>
+
+    <script src="scripts/script.js"></script>
+    <script src="scripts/edit.js"></script>
+    <script src="scripts/eventListner.js"></script>
 </body>
 </html>

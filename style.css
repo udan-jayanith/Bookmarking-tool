@@ -1,6 +1,7 @@
 
 :root {
-    accent-color: #2f941bf4;
+    --main-color: #2f941bf4;
+    accent-color: var(--main-color);
 }
   
 *{
@@ -20,12 +21,12 @@ input{
     padding: 10px;
     box-shadow: none;
     margin-bottom: 10px;
-    border: 5px solid #2f941bf4;
+    border: 5px solid var(--main-color);
 }
 
 button{
     border-top: none;
-    background-color: #2f941bf4;
+    background-color: var(--main-color);
     color: aliceblue;
     height: 40px;
     font-weight: bold;
@@ -38,7 +39,7 @@ button{
 ul li, a{
     font-size: 15px;
     text-decoration: none;
-    color: #2f941bf4;
+    color: var(--main-color);
     cursor: pointer;
 }
 
@@ -51,7 +52,7 @@ ul li, a{
     margin-left: 8px;
 }
 
-li{
+.li{
     display: flex;
     align-items: center;
     .p{
@@ -75,9 +76,9 @@ li{
 .clearAll{
     bottom: 0;
     margin-bottom: 10px;
-    border: 5px solid #2f941bf4;
+    border: 5px solid var(--main-color);
     background-color: white;
-    color: #2f941bf4;
+    color: var(--main-color);
 }
 
 .addToBookMark:hover, .Bookmark:hover, .deleteButton:hover{
@@ -85,12 +86,12 @@ li{
 }
 
 input, input[type=text]{
-    border: 5px solid #2f941bf4;
+    border: 5px solid var(--main-color);
     outline: none;
 }
 
 .clearAll{
-    border: 5px solid #2f941bf4;
+    border: 5px solid var(--main-color);
     background-color: white;
 }
 
@@ -116,7 +117,7 @@ dialog{
     border: none;
     text-align: center;
     font-size: 16px;
-    border: 5px solid #2f941bf4;
+    border: 5px solid var(--main-color);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.499);
 
     button{
@@ -125,9 +126,9 @@ dialog{
     }
 
     .popup-no{
-        border: 5px solid #2f941bf4;
+        border: 5px solid var(--main-color);
         background-color: white;
-        color: #2f941bf4;
+        color: var(--main-color);
     }
 
 }
@@ -136,4 +137,52 @@ dialog::backdrop{
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.365);
     backdrop-filter: blur(3px);
+}
+
+.editButton{
+    text-align: center;
+    margin-left: 2vh;
+}
+
+.edit{
+    min-width: 370px;
+    min-height: 495px;
+}
+
+.ol{
+    li{
+        text-align: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 290px;
+        margin: 0%;
+        padding: 0;
+    }
+}
+
+.listDiv{
+    p{
+        margin: 0;
+        padding: 0;
+    }
+    p:hover{
+        text-decoration: underline;
+    }
+    button{
+        width: fit-content;
+        height: fit-content;
+    }
+    button:hover{
+        background-color:#087400da;
+    }
+}
+
+.menu{
+    margin: 0;
+    padding: 0;
+}
+
+.edit-dialog{
+    min-height: 160px;
 }

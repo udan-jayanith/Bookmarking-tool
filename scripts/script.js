@@ -31,7 +31,7 @@ function renderItems(){
     array.forEach((element, index) => {
         
         ul.innerHTML += `
-        <li>
+        <li class="li">
             <button class="dot"></button>
             <a href="${element.url}" target="_blank">
                 <p class="p">
@@ -39,8 +39,8 @@ function renderItems(){
                 </p>
             </a>
             <button class="deleteButton" id="${index}">X</button>
-        </li>`
-
+        </li>
+        `
     })
 
     const deleteButton = document.querySelectorAll('.deleteButton')
