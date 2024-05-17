@@ -56,12 +56,16 @@ ul li, a{
     display: flex;
     align-items: center;
     .p{
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        max-width: 290px;
-        margin: 0%;
+        max-width: 300px;
+        margin: 2% 0 0 0;
         padding: 0;
+        display: flex;
+        align-items: center;
+        img{
+            margin-right: 4px;
+            width: 16px;
+            height: 16px;
+        }
     }
     .dot{
         border-radius: 2000px;
@@ -139,12 +143,8 @@ dialog::backdrop{
     backdrop-filter: blur(3px);
 }
 
-.editButton{
-    text-align: center;
-    margin-left: 2vh;
-}
 
-.edit{
+.edit, .bin-dialog{
     min-width: 370px;
     min-height: 495px;
 }
@@ -185,4 +185,19 @@ dialog::backdrop{
 
 .edit-dialog{
     min-height: 160px;
+}
+
+.loading-hint{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    p{
+        margin-left: 16px;
+    }
+}
+
+.icon{
+    width: 16px;
+    height: 16px;
+    margin-left: 3px;
 }

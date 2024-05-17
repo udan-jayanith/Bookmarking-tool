@@ -1,0 +1,30 @@
+
+.context-menu { 
+    text-align: left;
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 130px;
+    max-width: 130px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    float: left;
+    
+    a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      
+    }
+    a:hover {
+      background-color: whitesmoke;
+    }
+
+    .bin{
+      color: rgba(0, 0, 0, 0.49);
+    }
+} 
+
+

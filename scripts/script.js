@@ -23,29 +23,48 @@ if(JSON.parse(localStorage.getItem('array')) != null){
     renderItems()
 }
 
+function getFaviconUrl(url) {
+    return `chrome-extension://${chrome.runtime.id}/_favicon/?pageUrl=${encodeURIComponent(url)}&size=128`;
+}
+
+function getTitle(title){
+    const paragraph = title
+    let result = paragraph.slice(0, 32)
+
+    if(paragraph.length > 33) result = paragraph.slice(0, 32)+'...'
+    return result
+}
+
 function renderItems(){
 
     ul.innerHTML = ''
     localStorage.setItem('array', JSON.stringify(array)) 
 
     array.forEach((element, index) => {
-        
-        ul.innerHTML += `
-        <li class="li">
-            <button class="dot"></button>
-            <a href="${element.url}" target="_blank">
-                <p class="p">
-                    ${element.title}
-                </p>
-            </a>
-            <button class="deleteButton" id="${index}">X</button>
-        </li>
-        `
+        if(element == undefined)array.splice(index, 1)
+        else{
+                
+            ul.innerHTML += `
+            <li class="li">
+                <button class="dot"></button>
+                <a href="${element.url}" target="_blank" class="aa">
+                    <p class="p">
+                    <img src="${getFaviconUrl(element.url)}">
+                        ${getTitle(element.title)}
+                    </p>
+                </a>
+                <button class="deleteButton" id="${index}">X</button>
+            </li>
+            `
+        }
+
     })
 
     const deleteButton = document.querySelectorAll('.deleteButton')
     deleteButton.forEach( (button)=>{
         button.addEventListener('click', (event)=> {
+            //bin.push(array[event.target.id])
+            //localStorage.setItem('bin', JSON.stringify(bin))
             array.splice(event.target.id, 1)
             renderItems()
         })
@@ -110,6 +129,10 @@ function deleteAll (){
     renderItems()
 }
 
+setTimeout(function(){
+    const hint = document.querySelector('.hint')
+    hint.style.display = "none" 
+}, 2000);
 
 
 

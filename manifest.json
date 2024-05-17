@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "version": "4.6",
+  "name": "BookMarker",
+  
+  "description": "save a web site's URL address for future reference. Bookmarks save user and browser time, which is especially useful for Web pages",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "images/icon.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["scripts/script.js"]
+    }
+  ],
+  
+  "permissions": [
+  "tabs",
+  "contextMenus",
+  "favicon"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["_favicon/*"],
+      "matches": ["<all_urls>"],
+      "extension_ids": ["*"]
+    }
+  ],
+  
+  "icons": {
+    "16": "images/icon.png",
+    "32": "images/icon.png",
+    "48": "images/icon.png",
+    "128": "images/icon.png"
+  }
+}

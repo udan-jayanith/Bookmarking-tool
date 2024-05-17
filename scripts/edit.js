@@ -5,6 +5,7 @@ editButton.addEventListener('click', ()=>{
     const edit = document.querySelector('.edit')
     edit.showModal()
 
+    editArray = structuredClone(array)
     for(let i = 0; i<editArray.length; i++){
         editArray[i].num = i+1
     }
