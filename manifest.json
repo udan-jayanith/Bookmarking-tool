@@ -3,7 +3,7 @@
   "version": "5.2",
   "name": "BookMarker Beta",
   
-  "description": "save a web site's URL address for future reference. Bookmarks save user and browser time, which is especially useful for Web pages",
+  "description": "andvance BookMarker, a web site's URL address for future reference. ",
   "action": {
     "default_popup": "index.html",
     "default_icon": "images/icon.png"
