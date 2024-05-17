@@ -17,11 +17,15 @@ const closeButton = document.querySelector('.closeButton')
 const ul = document.querySelector('.ul')
 
 let array = []
+let bin = []
 
 if(JSON.parse(localStorage.getItem('array')) != null){
     array = JSON.parse(localStorage.getItem('array'))
     renderItems()
 }
+
+if(JSON.parse(localStorage.getItem('bin')) != null) bin = JSON.parse(localStorage.getItem('bin'))
+
 
 function getFaviconUrl(url) {
     return `chrome-extension://${chrome.runtime.id}/_favicon/?pageUrl=${encodeURIComponent(url)}&size=128`;
@@ -63,8 +67,13 @@ function renderItems(){
     const deleteButton = document.querySelectorAll('.deleteButton')
     deleteButton.forEach( (button)=>{
         button.addEventListener('click', (event)=> {
-            //bin.push(array[event.target.id])
-            //localStorage.setItem('bin', JSON.stringify(bin))
+            
+            var now = moment()
+            now.add(20, 'day')
+            array[event.target.id].deletDate = now.format('DD')
+
+            bin.push(array[event.target.id])
+            localStorage.setItem('bin', JSON.stringify(bin))
             array.splice(event.target.id, 1)
             renderItems()
         })
