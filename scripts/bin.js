@@ -23,6 +23,26 @@ recycleBin.addEventListener('click', ()=>{
         renderItems()
     })
 
+    const restoreAll = document.querySelector('.restore-all-el')
+    restoreAll.addEventListener('click', ()=>{
+        
+        array = array.concat(bin)
+        bin = []
+
+        localStorage.setItem('array', JSON.stringify(array)) 
+        localStorage.setItem('bin', JSON.stringify(bin))
+
+        renderBin()
+    })
+
+    const removeAll = document.querySelector('.remove-all-el')
+    removeAll.addEventListener('click', ()=>{
+        bin = []
+        localStorage.setItem('bin', JSON.stringify(bin))
+
+        renderBin()
+    })
+
 })
 
 function renderBin(){

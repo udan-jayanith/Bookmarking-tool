@@ -132,7 +132,8 @@ function currentTab (){
 }
 
 function deleteAll (){
-    localStorage.clear()
+    bin = bin.concat(array)
+    localStorage.setItem('bin', JSON.stringify(bin))
     array = []
     ul.innerHTML = ''
     renderItems()

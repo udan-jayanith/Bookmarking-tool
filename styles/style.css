@@ -1,6 +1,8 @@
 
 :root {
     --main-color: #2f941bf4;
+    --main-hover: #087400da;
+    --background-color: white;
     accent-color: var(--main-color);
 }
   
@@ -12,7 +14,7 @@
 body{
     min-width: 400px;
     min-height: 450px;
-    background-color: white;
+    background-color: var(--background-color);
 }
 
 input{
@@ -22,12 +24,13 @@ input{
     box-shadow: none;
     margin-bottom: 10px;
     border: 5px solid var(--main-color);
+    font-size: large;
 }
 
 button{
     border-top: none;
     background-color: var(--main-color);
-    color: aliceblue;
+    color: var(--background-color);
     height: 40px;
     font-weight: bold;
     letter-spacing: 1px;
@@ -50,6 +53,15 @@ ul li, a{
     padding: 0 0 0 1px;
     text-align: center;
     margin-left: 8px;
+}
+
+.top-two-button{
+    display: flex;
+    align-items: center;
+    
+    .Bookmark{
+        margin-left: 8px;
+    }
 }
 
 .li{
@@ -81,12 +93,12 @@ ul li, a{
     bottom: 0;
     margin-bottom: 10px;
     border: 5px solid var(--main-color);
-    background-color: white;
+    background-color: var(--background-color);
     color: var(--main-color);
 }
 
 .addToBookMark:hover, .Bookmark:hover, .deleteButton:hover{
-    background-color: #087400da;
+    background-color: var(--main-hover);
 }
 
 input, input[type=text]{
@@ -96,11 +108,18 @@ input, input[type=text]{
 
 .clearAll{
     border: 5px solid var(--main-color);
-    background-color: white;
+    background-color: var(--background-color);
+}
+
+.deleteAll{
+    .popup-no{
+        background-color: var(--background-color);
+    }
 }
 
 button{
     cursor: pointer;
+    font-size: 12px; /*new font size*/
 }
 
 a:hover{
@@ -131,8 +150,12 @@ dialog{
 
     .popup-no{
         border: 5px solid var(--main-color);
-        background-color: white;
+        background-color: var(--background-color);
         color: var(--main-color);
+    }
+
+    button:hover{
+        background-color: var(--main-hover);
     }
 
 }
@@ -146,7 +169,7 @@ dialog::backdrop{
 
 .edit, .bin-dialog{
     min-width: 370px;
-    min-height: 495px;
+    min-height: 420px;
 }
 
 .ol{
@@ -174,7 +197,7 @@ dialog::backdrop{
         height: fit-content;
     }
     button:hover{
-        background-color:#087400da;
+        background-color:var(--main-hover);
     }
 }
 
@@ -193,6 +216,7 @@ dialog::backdrop{
     padding: 0;
     p{
         margin-left: 16px;
+        font-size: medium;
     }
 }
 
@@ -200,4 +224,10 @@ dialog::backdrop{
     width: 16px;
     height: 16px;
     margin-left: 3px;
+}
+
+.bin-dialog{
+    button{
+        width: 27vh; /* vh width*/
+    }
 }
