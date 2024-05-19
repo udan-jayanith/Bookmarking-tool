@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <input type="text" class="url" placeholder="Url">
+    <input type="url" class="url" placeholder="Url">
     <input type="text" class="title" placeholder="Title">
     
     <div class="top-two-button">
@@ -27,7 +27,7 @@
 
     <div class="loading-hint">
         <button class="clearAll">Delete All</button>
-        <p class="hint">Right click for more options.</p>
+        <p class="hint xx">Right click for more options.</p>
     </div>
 
     <dialog class="popup-open">
@@ -36,7 +36,7 @@
     </dialog>
 
     <dialog class="deleteAll">
-        <p>are you sure you want to delete all bookmarks</p>
+        <p class="xx">are you sure you want to delete all bookmarks</p>
         <button class="popup-yes">Yes</button>
         <button class="popup-no">No</button>
     </dialog>
@@ -63,13 +63,76 @@
 
         <button class="restore-all-el">Restore all</button>
         <button class="remove-all-el">Remove all</button>
-        <p>every item will be permanently removed after 20 days from deleted date</p>
+        <p class="xx">every item will be permanently removed after 20 days from deleted date</p>
+    </dialog>
+
+    <dialog class="setting-dialog">
+        <a class="setting-exit">exit</a>
+
+        <div class="one">
+            <p>main-color: </p>
+            <input type="color"  class="main-color">
+        </div>
+
+        <div class="one">
+            <p>background-color: </p>
+            <input type="color" class="background-color">
+        </div>
+
+        <div class="one">
+            <p>color: </p>
+            <input type="color" class="color">
+        </div>
+
+        <div class="one">
+            <p>favicon: </p>
+            <select class="favicon">
+                <option value="true">Enable</option>
+                <option value="false">Disable</option>
+            </select>
+    
+        </div>
+
+        <div class="one">
+            <p>p-color: </p>
+            <select class="p-color">
+                <option value="true">Enable</option>
+                <option value="false">Disable</option>
+            </select>
+    
+        </div>
+
+        <div class="one">
+            <p>recycle-bin: </p>
+            <select class="recycle-bin">
+                <option value="true">Enable</option>
+                <option value="false">Disable</option>
+            </select>
+    
+        </div>
+
+        <div class="one">
+            <p>favicon-quility: </p>
+            <select class="favicon-quility">
+                <option value="128">128</option>
+                <option value="48">48</option>
+                <option value="32">32</option>
+                <option value="16">16</option>
+            </select>
+    
+        </div>
+
+        <div class="onex">
+            <button>apply changes</button>
+            <button class="reset">reset</button>
+        </div>
+
     </dialog>
 
     <div id="contextMenu" class="context-menu"> 
         <a href="#" class="editButton">Edit</a>
         <a href="#" class="bin">Recycle Bin</a>
-        <a href="#" class="hide">Settings</a>
+        <a href="#" class="settings">Settings</a>
     </div> 
 
     
@@ -77,6 +140,7 @@
     <script src="scripts/script.js"></script>
     <script src="scripts/bin.js"></script>
     <script src="scripts/edit.js"></script>
+    <script src="scripts/settings.js"></script>
     <script src="scripts/contextMenu.js"></script>
     <script src="scripts/eventListner.js"></script>
 </body>

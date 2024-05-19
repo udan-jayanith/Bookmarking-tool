@@ -1,8 +1,10 @@
 
 :root {
-    --main-color: #2f941bf4;
-    --main-hover: #087400da;
-    --background-color: white;
+    --main-color: hsla(110, 69%, 34%, 0);  /* hsl(hue, saturation, lightness) */
+    --main-hover: hsla(110, 69%, 32%, 0);
+    --background-color: hsla(0, 0%, 100%, 0);
+    --color: rgba(0, 0, 0, 0);
+    --p-color: var(--main-color)
     accent-color: var(--main-color);
 }
   
@@ -12,9 +14,13 @@
     font-style: normal;
 }
 body{
-    min-width: 400px;
-    min-height: 450px;
+    min-width: 11cm;
+    min-height: 13cm;
     background-color: var(--background-color);
+}
+
+.p{
+    color: var(--color);
 }
 
 input{
@@ -25,6 +31,8 @@ input{
     margin-bottom: 10px;
     border: 5px solid var(--main-color);
     font-size: large;
+    background-color: var(--background-color);
+    color: var(--color);
 }
 
 button{
@@ -142,6 +150,11 @@ dialog{
     font-size: 16px;
     border: 5px solid var(--main-color);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.499);
+    background-color: var(--background-color);
+    
+    p{
+        color: var(--color);
+    }
 
     button{
         width: 96px;
@@ -158,6 +171,16 @@ dialog{
         background-color: var(--main-hover);
     }
 
+    input{
+        background-color: var(--background-color);
+        color: var(--color);
+    }
+
+    select{
+        outline: none;
+        margin-left: 0.3cm;
+    }
+
 }
 
 dialog::backdrop{
@@ -167,9 +190,9 @@ dialog::backdrop{
 }
 
 
-.edit, .bin-dialog{
-    min-width: 370px;
-    min-height: 420px;
+.edit, .bin-dialog, .setting-dialog{
+    min-width: 10cm;
+    min-height: 12cm;
 }
 
 .ol{
@@ -228,6 +251,45 @@ dialog::backdrop{
 
 .bin-dialog{
     button{
-        width: 27vh; /* vh width*/
+        width: 3cm;
     }
+}
+
+.setting-dialog{
+    button, select{
+        width: 3cm;
+    }
+    select{
+        height: 0.5cm;
+        font-size: 14px;
+    }
+}
+
+.one{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin: 0;
+    padding: 0;
+
+    input{
+        margin: 0cm 0 0 0.2cm;
+        width: 1.5cm;
+        height: 0.6cm;
+        padding: 0;
+        border: none;
+    }
+}
+
+.onex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .reset{
+        margin-left: 0.5cm;
+    }
+}
+
+.p{
+    color: var(--p-color);
 }

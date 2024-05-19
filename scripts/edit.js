@@ -118,7 +118,7 @@ function renderEdit(){
         <li>
             <div class="listDiv">
                 <hr>
-                <p>${element.num}. ${element.title}</p>
+                <p class = "p">${element.num}. ${element.title}</p>
                 <button class="up" id="${index}">Up</button>
                 <button class="down" id="${index}">Down</button>
                 <button class="edit-bookmark" id="${index}">Edit bookmark</button>

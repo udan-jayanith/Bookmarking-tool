@@ -18,6 +18,25 @@ const ul = document.querySelector('.ul')
 
 let array = []
 let bin = []
+let userSettings = {
+    mainColor: 'hsl(110, 69%, 34%)',
+    mainHover: 'hsl(110, 69%, 32%)',
+    backgroundColor: 'hsl(304, 71%, 100%)',
+    color: 'black',
+    favicon: 'true',
+    faviconSize: 128 //16, 32, 48, 128
+}
+
+function renderColor(){
+    const cssRoot = document.querySelector(':root')
+    cssRoot.style.setProperty('--main-color', userSettings.mainColor);
+    cssRoot.style.setProperty('--main-hover', userSettings.mainHover);
+    cssRoot.style.setProperty('--background-color', userSettings.backgroundColor);
+    cssRoot.style.setProperty('--color', userSettings.color)
+}
+
+if(JSON.parse(localStorage.getItem('userSettings')) != null) userSettings = JSON.parse(localStorage.getItem('userSettings'))
+renderColor()
 
 if(JSON.parse(localStorage.getItem('array')) != null){
     array = JSON.parse(localStorage.getItem('array'))
@@ -28,7 +47,14 @@ if(JSON.parse(localStorage.getItem('bin')) != null) bin = JSON.parse(localStorag
 
 
 function getFaviconUrl(url) {
-    return `chrome-extension://${chrome.runtime.id}/_favicon/?pageUrl=${encodeURIComponent(url)}&size=128`;
+    
+    if(userSettings.favicon == 'false') return ''
+    
+    return `<img src= "
+        chrome-extension://${chrome.runtime.id}/_favicon/?pageUrl=${encodeURIComponent(url)}&size=${userSettings.faviconSize}
+    ">
+     </img>`
+    
 }
 
 function getTitle(title){
@@ -53,7 +79,7 @@ function renderItems(){
                 <button class="dot"></button>
                 <a href="${element.url}" target="_blank" class="aa">
                     <p class="p">
-                    <img src="${getFaviconUrl(element.url)}">
+                        ${getFaviconUrl(element.url)}
                         ${getTitle(element.title)}
                     </p>
                 </a>

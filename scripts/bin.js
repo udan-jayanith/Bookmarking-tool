@@ -54,7 +54,7 @@ function renderBin(){
             <button class="dot"></button>
             <a>
                 <p class="p">
-                <img src="${getFaviconUrl(element.url)}">
+                    ${getFaviconUrl(element.url)}
                     ${getTitle(element.title)}
                 </p>
             </a>
