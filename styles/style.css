@@ -30,7 +30,7 @@ input{
     box-shadow: none;
     margin-bottom: 10px;
     border: 5px solid var(--main-color);
-    font-size: large;
+    font-size: 0.4cm;
     background-color: var(--background-color);
     color: var(--color);
 }
@@ -191,8 +191,8 @@ dialog::backdrop{
 
 
 .edit, .bin-dialog, .setting-dialog{
-    min-width: 10cm;
-    min-height: 12cm;
+    min-width: 10.2cm;
+    min-height: 13.4cm;
 }
 
 .ol{

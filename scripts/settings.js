@@ -10,7 +10,8 @@ setting.addEventListener('click', ()=>{
      })
 
      const mainColor = document.querySelector('.main-color')
-     mainColor.value = userSettings.mainColor
+     mainColor.value = HSLToHex(userSettings.mainColor)
+
      mainColor.addEventListener('change', ()=>{
           const color = hexToHSL(mainColor.value)
 
@@ -20,6 +21,8 @@ setting.addEventListener('click', ()=>{
      })
 
      const backgroundColor = document.querySelector('.background-color')
+     backgroundColor.value = HSLToHex(userSettings.backgroundColor)
+
      backgroundColor.addEventListener('change', ()=>{
           const color = hexToHSL(backgroundColor.value)
 
@@ -28,6 +31,8 @@ setting.addEventListener('click', ()=>{
      })
 
      const xxColor = document.querySelector('.color')
+     xxColor.value = HSLToHex(userSettings.color)
+
      xxColor.addEventListener('change', ()=>{
           const color = hexToHSL(xxColor.value)
 
@@ -36,15 +41,57 @@ setting.addEventListener('click', ()=>{
      })
 
      const favicon = document.querySelector('.favicon')
+     favicon.value = userSettings.favicon
+
      favicon.addEventListener('change', ()=>{
           userSettings.favicon = favicon.value
           renderItems()
      })
 
      const faviconQuility = document.querySelector('.favicon-quility')
+     faviconQuility.value = String(userSettings.faviconSize)
+
      faviconQuility.addEventListener('change', ()=>{
           userSettings.faviconSize = Number(faviconQuility.value)
           renderItems()
+     })
+
+     const recycleBin = document.querySelector('.recycle-bin')
+     recycleBin.value = userSettings.recycleBin
+
+     recycleBin.addEventListener('change', ()=>{
+          userSettings.recycleBin = recycleBin.value
+          localStorage.setItem('userSettings', JSON.stringify(userSettings))
+          location.reload();
+     })
+
+     const apply = document.querySelector('.apply')
+     apply.addEventListener('click', ()=>{
+          localStorage.setItem('userSettings', JSON.stringify(userSettings))
+          renderItems()
+     })
+
+     const reset = document.querySelector('.reset')
+     reset.addEventListener('click', ()=>{
+      userSettings = {
+        mainColor: 'hsl(110, 69%, 34%)',
+        mainHover: 'hsl(110, 69%, 32%)',
+        backgroundColor: 'hsl(304, 71%, 100%)',
+        color: 'hsl(0, 0%, 0%)',
+        favicon: 'true',
+        faviconSize: 48,
+        recycleBin: 'true'
+        }
+
+        mainColor.value = HSLToHex(userSettings.mainColor)
+        backgroundColor.value = HSLToHex(userSettings.backgroundColor)
+        xxColor.value = HSLToHex(userSettings.color)
+        favicon.value = userSettings.favicon
+        faviconQuility.value = String(userSettings.faviconSize)
+        recycleBin.value = userSettings.recycleBin
+
+        renderColor()
+        renderItems()
      })
 
 })
@@ -91,10 +138,23 @@ function hexToHSL(H) {
      s = +(s * 100).toFixed(1);
      l = +(l * 100).toFixed(1);
 
-     return ["hsl(" + h + "," + s + "%," + l + "%)", "hsl(" + h + "," + s + "%," + (l-4) + "%)"];
+     return ["hsl("+h+","+s+"%,"+l+"%)", "hsl("+h+","+s+"%,"+(l-4)+"%)"];
 }
 
-function HSLToHex(h,s,l) {
+function HSLToHex(hsl) {
+
+  let hslValue = hsl.split('hsl(')[1].split(')')[0].split(',')
+
+  let hex = {
+     h: Number(hslValue[0]),
+     s: Number(hslValue[1].split('%')[0]),
+     l: Number(hslValue[2].split('%')[0]),
+  }
+
+
+  let h = hex.h
+  let s = hex.s
+  let l = hex.l
   s /= 100;
   l /= 100;
 

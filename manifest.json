@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "version": "7.0",
-  "name": "BookMarker Beta",
+  "version": "7.1",
+  "name": "BookMarker",
   
   "description": "andvance BookMarker, a web site's URL address for future reference. ",
   "action": {
@@ -19,7 +19,8 @@
   "permissions": [
   "tabs",
   "contextMenus",
-  "favicon"
+  "favicon",
+  "activeTab"
   ],
   "web_accessible_resources": [
     {

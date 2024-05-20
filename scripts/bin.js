@@ -1,7 +1,6 @@
 const recycleBin = document.querySelector('.bin')
 
-
-recycleBin.addEventListener('click', ()=>{
+if(userSettings.recycleBin == 'true') recycleBin.addEventListener('click', ()=>{
 
     const binDialog = document.querySelector('.bin-dialog')
 
@@ -43,7 +42,9 @@ recycleBin.addEventListener('click', ()=>{
         renderBin()
     })
 
-})
+}) 
+else recycleBin.style = 'color: rgba(0, 0, 0, 0.447);'
+
 
 function renderBin(){
     const olBin = document.querySelector('.ol-bin')

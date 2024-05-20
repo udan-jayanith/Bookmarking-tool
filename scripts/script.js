@@ -2,14 +2,20 @@ let page= {
     url: '',
     title: ''
 }
- 
-chrome.tabs.query({ active: true, currentWindow: true}, function(tabs) {
-    const url = tabs[0].url
-    page.url = url
 
-    const title = tabs[0].title
-    page.title = title
-})
+try {
+    chrome.tabs.query({ active: true, currentWindow: true}, function(tabs) {
+        const url = tabs[0].url
+        page.url = url
+    
+        const title = tabs[0].title
+        page.title = title
+    })
+  }
+  catch(err) {
+    dialogBOX(err, 'OK')
+}
+
 
 const inputUrl = document.querySelector('.url')
 const inputTitle = document.querySelector('.title')
@@ -22,9 +28,10 @@ let userSettings = {
     mainColor: 'hsl(110, 69%, 34%)',
     mainHover: 'hsl(110, 69%, 32%)',
     backgroundColor: 'hsl(304, 71%, 100%)',
-    color: 'black',
+    color: 'hsl(0, 0%, 0%)',
     favicon: 'true',
-    faviconSize: 128 //16, 32, 48, 128
+    faviconSize: 48,
+    recycleBin: 'true'
 }
 
 function renderColor(){
