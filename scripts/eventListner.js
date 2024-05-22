@@ -3,7 +3,6 @@ const bookmarkThisTab = document.querySelector('.Bookmark')
 const clearAll = document.querySelector('.clearAll')
 
 
-
 customeBookMark.addEventListener("click", addUrl)
 bookmarkThisTab.addEventListener('click', currentTab)
 clearAll.addEventListener('dblclick', deleteAll)

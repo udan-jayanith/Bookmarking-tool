@@ -3,7 +3,7 @@
   "version": "7.1",
   "name": "BookMarker",
   
-  "description": "andvance BookMarker, a web site's URL address for future reference. ",
+  "description": "andvance BookMarker, save web site's URL address for future reference. ",
   "action": {
     "default_popup": "index.html",
     "default_icon": "images/icon.png"
