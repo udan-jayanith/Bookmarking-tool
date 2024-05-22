@@ -172,8 +172,12 @@ function deleteAll (){
     renderItems()
 }
 
+const hint = document.querySelector('.hint')
+const random = Math.random()*10
+
+if(random > 4) hint.innerHTML = 'Press Shift+Space to search'
+
 setTimeout(function(){
-    const hint = document.querySelector('.hint')
     hint.style.display = "none" 
 }, 2000);
 

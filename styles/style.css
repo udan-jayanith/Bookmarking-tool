@@ -190,7 +190,7 @@ dialog::backdrop{
 }
 
 
-.edit, .bin-dialog, .setting-dialog{
+.edit, .bin-dialog, .setting-dialog, .searchDialog{
     min-width: 10.2cm;
     min-height: 13.4cm;
 }
@@ -235,6 +235,7 @@ dialog::backdrop{
 
 .loading-hint{
     display: flex;
+    align-items: center;
     margin: 0;
     padding: 0;
     p{
@@ -292,4 +293,29 @@ dialog::backdrop{
 
 .p{
     color: var(--p-color);
+}
+
+.ap{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    a{
+        text-align: left;
+    }
+    .title{
+        color: var(--color);
+        text-decoration: none;
+    }
+}
+
+.searchDialog{
+    .search{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 8px;
+    
+        height: 40px;
+        width: 90%;
+    }
 }

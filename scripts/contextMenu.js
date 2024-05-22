@@ -8,7 +8,7 @@ function hideMenu() {
 } 
 
 function rightClick(e) { 
-    e.preventDefault()
+    //e.preventDefault()
 
     if (menu.style.display == "block") hideMenu() 
     else { 
