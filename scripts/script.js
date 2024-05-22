@@ -179,7 +179,7 @@ if(random > 4) hint.innerHTML = 'Press Shift+Space to search'
 
 setTimeout(function(){
     hint.style.display = "none" 
-}, 2000);
+}, 3000);
 
 
 
