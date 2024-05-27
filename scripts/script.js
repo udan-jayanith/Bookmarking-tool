@@ -3,6 +3,9 @@ let page= {
     title: ''
 }
 
+
+/*
+    
 try {
     chrome.tabs.query({ active: true, currentWindow: true}, function(tabs) {
         const url = tabs[0].url
@@ -15,7 +18,33 @@ try {
   catch(err) {
     dialogBOX(err, 'OK')
 }
+    
+ */
 
+function getCurrentTab() {
+    chrome.tabs.query({ active: true, currentWindow: true}, ([tab]) => {
+
+      if (chrome.runtime.lastError){
+        console.error(chrome.runtime.lastError)
+        dialogBOX(chrome.runtime.lastError, 'OK')
+      }
+
+      console.log(tab)
+
+        try {
+            const url = tab.url
+            page.url = url
+        
+            const title = tab.title
+            page.title = title
+        }
+        catch(err) {
+            dialogBOX(err, 'OK')
+        }
+
+    })
+}
+getCurrentTab()
 
 const inputUrl = document.querySelector('.url')
 const inputTitle = document.querySelector('.title')
