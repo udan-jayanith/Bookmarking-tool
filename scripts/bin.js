@@ -9,9 +9,7 @@ if(userSettings.recycleBin == 'true') recycleBin.addEventListener('click', ()=>{
     bin.forEach((el, index)=>{
 
         const timeAgo = moment(el.deletDate, "YYYYMMDD").fromNow().split(' ')
-        if(timeAgo[1] != "hours" && 
-           timeAgo[1] != "minutes" && 
-           Number(timeAgo[0]) >= 20 || 
+        if(timeAgo[1] == "day" && Number(timeAgo[0]) >= 20 || 
            timeAgo[1] == "years ago") bin.splice(index , 1)
         
 
