@@ -29,8 +29,6 @@ function getCurrentTab() {
         dialogBOX(chrome.runtime.lastError, 'OK')
       }
 
-      console.log(tab)
-
         try {
             const url = tab.url
             page.url = url
@@ -130,9 +128,8 @@ function renderItems(){
     deleteButton.forEach( (button)=>{
         button.addEventListener('click', (event)=> {
             
-            var now = moment()
-            now.add(20, 'day')
-            array[event.target.id].deletDate = now.format('DD')
+/////////////////////////////////////////////////
+            array[event.target.id].deletDate = moment().format("YYYYMMDD")
 
             bin.push(array[event.target.id])
             localStorage.setItem('bin', JSON.stringify(bin))
@@ -209,6 +206,4 @@ if(random > 4) hint.innerHTML = 'Press Shift+Space to search'
 setTimeout(function(){
     hint.style.display = "none" 
 }, 3000);
-
-
 

@@ -7,7 +7,7 @@ customeBookMark.addEventListener("click", addUrl)
 bookmarkThisTab.addEventListener('click', currentTab)
 clearAll.addEventListener('dblclick', deleteAll)
 
-document.addEventListener("keypress", function(event) {///////////
+document.addEventListener("keypress", function(event) {
     if (event.key == 'Enter') {
         currentTab()
     }

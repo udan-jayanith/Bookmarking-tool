@@ -7,11 +7,14 @@ if(userSettings.recycleBin == 'true') recycleBin.addEventListener('click', ()=>{
     binDialog.showModal()
 
     bin.forEach((el, index)=>{
-        var now = moment()
-        now.format('DD')
 
-        if(Number(el.deletDate) >= Number(now.format('DD'))) bin.splice(index , 1)
+        const timeAgo = moment(el.deletDate, "YYYYMMDD").fromNow().split(' ')
+        if(timeAgo[1] != "hours" && 
+           timeAgo[1] != "minutes" && 
+           Number(timeAgo[0]) >= 20 || 
+           timeAgo[1] == "years ago") bin.splice(index , 1)
         
+
     })
 
     renderBin()
