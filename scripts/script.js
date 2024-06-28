@@ -21,6 +21,13 @@ try {
     
  */
 
+var DEBUG = false;
+// ENABLE/DISABLE Console Logs
+if(!DEBUG){
+  console.log = function() {}
+}
+console.log('hi')
+
 function getCurrentTab() {
     chrome.tabs.query({ active: true, currentWindow: true}, ([tab]) => {
 
